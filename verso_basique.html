@@ -18,6 +18,11 @@
     url = url.slice(16, url.length - 4);
     //Modifie l'url si on n'est pas dans Anki (décommenter la ligne ci-dessous pour le développement)
     //if (url === '{{url}}') url = 'https://coopmaths.fr/exercice.html?ex=3L11-1,s=1&serie=YI8q,i=1';
+    //Sur Windows, Anki convertit les url en html lorsqu'on les colle. On vérifie si c'est le cas et on retire le html si besoin.
+    if (url.charAt(0) === '<') {
+        var index = url.indexOf('>');
+        url = url.slice(index+1,url.indexOf('</a>'));
+    }
     //Force le n=1, le i=0, le cd=1 et remplace la graine
     remplace(',n=',',n=1');
     remplace(',i=',',i=0');

@@ -4,7 +4,7 @@
     if(void 0===window.Persistence){var _persistenceKey="github.com/SimonLammer/anki-persistence/",_defaultKey="_default";if(window.Persistence_sessionStorage=function(){var e=!1;try{"object"==typeof window.sessionStorage&&(e=!0,this.clear=function(){for(var e=0;e<sessionStorage.length;e++){var t=sessionStorage.key(e);0==t.indexOf(_persistenceKey)&&(sessionStorage.removeItem(t),e--)}},this.setItem=function(e,t){void 0==t&&(t=e,e=_defaultKey),sessionStorage.setItem(_persistenceKey+e,JSON.stringify(t))},this.getItem=function(e){return void 0==e&&(e=_defaultKey),JSON.parse(sessionStorage.getItem(_persistenceKey+e))},this.removeItem=function(e){void 0==e&&(e=_defaultKey),sessionStorage.removeItem(_persistenceKey+e)})}catch(e){}this.isAvailable=function(){return e}},window.Persistence_windowKey=function(e){var t=window[e],i=!1;"object"==typeof t&&(i=!0,this.clear=function(){t[_persistenceKey]={}},this.setItem=function(e,i){void 0==i&&(i=e,e=_defaultKey),t[_persistenceKey][e]=i},this.getItem=function(e){return void 0==e&&(e=_defaultKey),t[_persistenceKey][e]||null},this.removeItem=function(e){void 0==e&&(e=_defaultKey),delete t[_persistenceKey][e]},void 0==t[_persistenceKey]&&this.clear()),this.isAvailable=function(){return i}},window.Persistence=new Persistence_sessionStorage,Persistence.isAvailable()||(window.Persistence=new Persistence_windowKey("py")),!Persistence.isAvailable()){var titleStartIndex=window.location.toString().indexOf("title"),titleContentIndex=window.location.toString().indexOf("main",titleStartIndex);titleStartIndex>0&&titleContentIndex>0&&titleContentIndex-titleStartIndex<10&&(window.Persistence=new Persistence_windowKey("qt"))}}
 </script>
 <div id='chargement'>Chargement <img src='https://topmaths.fr/wp-content/uploads/2021/07/Loading.png'/></div>
-<div id='valQuestion' style='visibility: hidden;'> Question - Erreur Javascript </div>
+<div id='valQuestion'> Question - Erreur Javascript </div>
  
 <script>
     var graine = 'graine';
@@ -20,6 +20,11 @@
     url = url.slice(16, url.length - 4);
     //Modifie l'url si on n'est pas dans Anki (décommenter la ligne ci-dessous pour le développement)
     //if (url === '{{url}}') url = 'https://coopmaths.fr/exercice.html?ex=3L11-1,s=1,n=7,i=1&serie=YI8q';
+    //Sur Windows, Anki convertit les url en html lorsqu'on les colle. On vérifie si c'est le cas et on retire le html si besoin.
+    if (url.charAt(0) === '<') {
+        var index = url.indexOf('>');
+        url = url.slice(index+1,url.indexOf('</a>'));
+    }
     //Force le n=1, le i=0, le cd=1 et remplace la graine
     remplace(',n=',',n=1');
     remplace(',i=',',i=0');
