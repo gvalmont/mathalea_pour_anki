@@ -5,7 +5,7 @@ __**MathALEA pour Anki**__ est un [modèle de carte](https://apps.ankiweb.net/do
 |Application|Recto|Verso|
 |:---------:|:---:|:---:|
 |Windows|<img src='Exemples/Windows-Basique-Recto.png'>|<img src='Exemples/Windows-Basique-Verso.png'>|
-|AnkiDroid|<img src='Exemples/AnkiDroid-Basique-Recto.png'>|<img src='Exemples/AnkiDroid-Basique-Verso.png'>|
+|AnkiDroid|<img src='Exemples/AnkiDroid-Basique-Recto.png' height='400'>|<img src='Exemples/AnkiDroid-Basique-Verso.png' height='400'>|
 
 ## Créer une nouvelle carte depuis une version Desktop
 |||
