@@ -1,11 +1,10 @@
-# mathalea_pour_anki
 ## Présentation
 __**MathALEA pour Anki**__ est un [modèle de carte](https://apps.ankiweb.net/docs/manual.fr.html#les-mod%C3%A8les-de-cartes "Sur Anki, les modèles de cartes définissent comment afficher les différents éléments d'une carte") sur [Anki](https://apps.ankiweb.net/ "lien vers la page de téléchargement de l'application") qui permet de se créer rapidement et simplement des [cartes](https://apps.ankiweb.net/docs/manual.fr.html#les-cartes "Anki virtualise le concept des ''flashcards'' et a gardé le nom de ''cartes'' pour désigner le couple formé par une question et une réponse") à partir des exercices de [MathALEA](https://coopmaths.fr/mathalea.html? "lien vers le générateur d'exercices").
 ## Exemples
 |Application|Recto|Verso|
 |:---------:|:---:|:---:|
 |Windows|<img src='Exemples/Windows-Basique-Recto.png'>|<img src='Exemples/Windows-Basique-Verso.png'>|
-|AnkiDroid|<img src='Exemples/AnkiDroid-Basique-Recto.png'>|<img src='Exemples/AnkiDroid-Basique-Verso.png'>|
+|AnkiDroid|<img src='Exemples/AnkiDroid-Basique-Recto.png' height='400'>|<img src='Exemples/AnkiDroid-Basique-Verso.png' height='400'>|
 
 ## Créer une nouvelle carte depuis une version Desktop
 |||
