@@ -51,7 +51,7 @@
         url = debut + nouvelleValeur + fin;
     }
     //Injecte le iframe
-    document.getElementById('valReponse').innerHTML = '<iframe scrolling="no" id="versoFrame" width="660" frameborder="0" height="200" src= "' + url + '&v=verso"></iframe>';
+    document.getElementById('valReponse').innerHTML = '<iframe scrolling="no" id="versoFrame" width="1000" frameborder="0" height="200" src= "' + url + '&v=verso"></iframe>';
     // Allow window to listen for a postMessage
     window.addEventListener('message', (event)=>{
         const hauteur = event.data.hauteur + 50 ;
