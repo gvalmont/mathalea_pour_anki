@@ -17,7 +17,7 @@
     var url = (function () {/* {{url}} */}).toString();
     url = url.slice(16, url.length - 4);
     //Modifie l'url si on n'est pas dans Anki (décommenter la ligne ci-dessous pour le développement)
-    //if (url === '{{url}}') url = 'https://coopmaths.fr/exercice.html?ex=3L11-1,s=1&serie=YI8q,i=1';
+    //url = 'https://coopmaths.fr/exercice.html?ex=3L11-1,s=1&serie=YI8q,i=1';
     //Sur Windows, Anki convertit les url en html lorsqu'on les colle. On vérifie si c'est le cas et on retire le html si besoin.
     if (url.charAt(0) === '<') {
         var index = url.indexOf('>');
@@ -33,10 +33,18 @@
         //Si le paramètre n'est pas présent, on le place avant la première virgule
         index = url.indexOf(tag);
         if (index < 0) {
-            index = url.indexOf(',');
-            // S'il n'y a pas de virgule, on le place à la fin
-            if (index < 0) {
+            if (tag === '&amp;serie=') { // Sauf si c'est la série, dans ce cas on le place à la fin
                 index = url.length;
+            } else {
+                index = url.indexOf(',');
+                // S'il n'y a pas de virgule, on le avant le &
+                if (index < 0) {
+                    index = url.indexOf('&amp;')
+                    // S'il n'y a pas non plus de &, on le place à la fin
+                    if (index < 0) {
+                        index = url.length;
+                    }
+                }
             }
             debut = url.slice(0,index);
             index = index - 2;
