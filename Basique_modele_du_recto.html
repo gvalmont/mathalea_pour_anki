@@ -25,17 +25,18 @@
         var index = url.indexOf('>');
         url = url.slice(index+1,url.indexOf('</a>'));
     }
-    //Force le n=1, le i=0, le cd=1 et remplace la graine
+    //Force le n=1, le i=0, le cd=1, le v=recto et remplace la graine
     remplace(',n=',',n=1');
     remplace(',i=',',i=0');
     remplace(',cd=',',cd=1');
     remplace('&amp;serie=','&serie='+graine);
+    remplace('&amp;v=','&v=recto');
     function remplace(tag, nouvelleValeur) {
         var index, debut, fin, separateurs;
         //Si le paramètre n'est pas présent, on le place avant la première virgule
         index = url.indexOf(tag);
         if (index < 0) {
-            if (tag === '&amp;serie=') { // Sauf si c'est la série, dans ce cas on le place à la fin
+            if (tag.charAt(0) === '&') { // Sauf si c'est un paramètre en '&', dans ce cas on le place à la fin
                 index = url.length;
             } else {
                 index = url.indexOf(',');
@@ -65,7 +66,7 @@
         url = debut + nouvelleValeur + fin;
     }
     //Injecte le iframe
-    document.getElementById('valQuestion').innerHTML = '<iframe scrolling="no" id="rectoFrame" width="1000" frameborder="0" height="200" src= "' + url + '&v=recto"></iframe>';
+    document.getElementById('valQuestion').innerHTML = '<iframe scrolling="no" id="rectoFrame" width="1000" frameborder="0" height="200" src= "' + url + '"></iframe>';
     
     // Allow window to listen for a postMessage
     window.addEventListener('message', (event)=>{
