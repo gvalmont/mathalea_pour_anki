@@ -25,8 +25,7 @@
         var index = url.indexOf('>');
         url = url.slice(index+1,url.indexOf('</a>'));
     }
-    //Force le n=1, le i=0, le cd=1, le v=recto et remplace la graine
-    remplace(',n=',',n=1');
+    //Force le i=0, le cd=1, le v=recto et remplace la graine
     remplace(',i=',',i=0');
     remplace(',cd=',',cd=1');
     remplace('&amp;serie=','&serie='+graine);
