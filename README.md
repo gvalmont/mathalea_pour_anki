@@ -7,9 +7,23 @@ __**MathALEA pour Anki**__ est un [modèle de carte](https://apps.ankiweb.net/do
 |AnkiDroid|<img src='Exemples/AnkiDroid-Basique-Recto.png' height='400'>|<img src='Exemples/AnkiDroid-Basique-Verso.png' height='400'>|
 
 ## Créer une nouvelle carte depuis une version Desktop
+**Prérequis**
+
+Pour pouvoir créer une nouvelle carte, il faut déjà disposer du type de note __**MathALEA Basique v1.0**__.
+
+Pour cela, il suffit d'ouvrir [ce fichier](https://github.com/gvalmont/mathalea_pour_anki/releases/download/v1.0/MathALEA.Basique.v1.0.apkg) avec Anki. Celui-ci ne contient qu'une carte (que vous pourrez supprimer) mais il vous permettra surtout d'ajouter le type de note __**MathALEA Basique v1.0**__ à votre installation d'Anki.
+
 |||
 |:---:|:---:|
-|<img src='Exemples/Windows-Basique-Ajout.png'>|1 - Cliquer sur __**Ajouter**__ <br> 2 - Choisir le type de note __**MathALEA Basique RC**__ <br> 3 - Choisir le paquet dans lequel on veut mettre la nouvelle carte <br> 4 - Coller le titre de l'exercice dans le champ __**Titre**__. Ce sera le nom de la carte dans le navigateur de Anki <br> 5 - Coller l'url de l'exercice désiré <br> 6 - Valider la saisie grâce au bouton __**Ajouter**__|
+|<img src='Exemples/Windows-Basique-Ajout.png'>|1 - Cliquer sur __**Ajouter**__ <br> 2 - Choisir le type de note __**MathALEA Basique v1.0**__ <br> 3 - Choisir le paquet dans lequel on veut mettre la nouvelle carte <br> 4 - Coller le titre de l'exercice dans le champ __**Titre**__. Ce sera le nom de la carte dans le navigateur de Anki <br> 5 - Coller l'url de l'exercice désiré <br> 6 - Valider la saisie grâce au bouton __**Ajouter**__|
+
+__**Remarques**__
+Certains paramètres d'url sont traités par le type de note :
+- L'interactivité est enlevée (i=0) -> Pas de champ avec une réponse à saisir
+- La correction détaillée est ajoutée si elle est disponible (cd=1)
+- La série est remplacée à chaque fois que le recto est affiché (&serie=...) -> Les valeurs sont différentes à chaque ouverture de carte
+
+Les autres paramètres, comme les niveaux de difficulté et le nombre de questions sont inchangés et restent ceux précisés dans l'url.
 
 ## Mise à jour manuelle (ou comment construire à partir des sources)
 |||
