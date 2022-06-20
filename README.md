@@ -9,7 +9,9 @@ __**MathALEA pour Anki**__ est un [modèle de carte](https://apps.ankiweb.net/do
 ## Créer une nouvelle carte depuis une version Desktop
 **Prérequis**
 
-Pour pouvoir créer une nouvelle carte, il faut déjà disposer du type de note __**MathALEA Basique v1.0**__.
+Pour que ça fonctionne, il faut une version récente de Anki (>= à 2.1.50 pour la version desktop).
+
+Ensuite, pour pouvoir créer une nouvelle carte, il faut disposer du type de note __**MathALEA Basique v1.0**__.
 
 Pour cela, il suffit d'ouvrir [ce fichier](https://github.com/gvalmont/mathalea_pour_anki/releases/download/v1.0/MathALEA.Basique.v1.0.apkg) avec Anki. Celui-ci ne contient qu'une carte (que vous pourrez supprimer) mais il vous permettra surtout d'ajouter le type de note __**MathALEA Basique v1.0**__ à votre installation d'Anki.
 
